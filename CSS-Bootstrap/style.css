@@ -1,0 +1,16 @@
+body {
+  background-color: darkgrey;
+  font-size: 22px;
+}
+
+p {
+  color: rgb(17, 17, 17);
+}
+
+.test {
+  color: blue;
+}
+
+#second {
+  font-style: italic;
+}
