@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #count{
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>HTML Notes</h1>
+  <h3>Some text formating</h3><hr>
+  <p>
+    <b>bold text</b><br>
+    <strong>strong text, tell browser it is important</stong><br>
+    <i>italic</i><br>
+    <em>em with seantics importance</em><br>
+    <mark>mark</mark><br>
+    <u>u for underline</u><br>
+    <strike>strike</strike><br>
+    <tt>Mononspaced font using tt tag</tt><br>
+    <p>Normal<sup>superscript text using sup</sup></p>
+    <p>Normal<sub>superscript text using sub</sub></p>
+    <p>Normal <big>big</big></p>
+    <p>Normal <small>small</small></p>
+  </p>
+
+  <h3>Important Attributes</h3>
+  <hr>
+  <ul>
+    <li>style</li>
+    <li>title</li>
+    <li>href: <a href="A link to Google"></a></li>
+    <li>href: <a href="A link to Google"></a></li>
+    <li>src: <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMJs8DlRZFpM9RfGH8negAdAXPKi2f25l-Zw&usqp=CAU" alt="an image" height="50px" width="50px"></li>
+
+  </ul>
+
+
+  <h1>Counter</h1>
+
+
+
+  <p>Using the &ltdata&gt tag to display and update count</p>
+
+  <p>Count: <data id="count" value="0" style="color: blueviolet;">0</data></p>
+  <button onclick="decreCount()" title="click to add">Decrement</button>
+  <button onclick="increCount()" title="click to subtract">Increment</button>
+
+  <script>
+    function increCount(){
+      const countElement = document.querySelector('#count')
+      let count = parseInt(countElement.value);
+      count++;
+      countElement.value = count.toString();
+      countElement.textContent = count.toString();
+    }
+
+    function decreCount(){
+      const countElement = document.querySelector('#count')
+      let count = parseInt(countElement.value);
+      count--;
+      countElement.value = count.toString();
+      countElement.textContent = count.toString();
+    }    
+  </script>
+</body>
+</html>

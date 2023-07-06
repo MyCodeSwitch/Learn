@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Object</h1>
+  <script>
+
+  //create object by object literal 
+  project_1 = {
+    id:1023,
+    name:"BeechurstAve",
+    location:"Morgantown"
+  }
+  
+  document.write(`${project_1.id}: ${project_1.name} <br>`);
+
+  //create object by instance 
+  const project_2 = new Object();
+  project_2.id = 223;
+  project_2.name = "Mon blvd";
+  project_2.loca = "Star City"
+
+  document.write(`${project_2.loca}<br>`);
+
+  //create object by constructor
+  function project(id_p, name_p, loca_p){
+  this.id = id_p;
+  this.name = name_p;
+  this.location = loca_p;
+  }
+
+  project_3 = new project(998, "Donna", "Mon County");
+
+  document.write(`${project_3.location}`);
+
+  //define method in object
+
+  function road(id, name, speedLimit){
+    this.id = id;
+    this.name = name;
+    this.speedLimit = speedLimit;
+
+    this.changeSpeedLimit = function(newSpeedLimit){
+      this.speedLimit = newSpeedLimit;
+    }
+  }
+
+  let road_1 = new road(334, "Mileground", 35);
+  document.write(`<br>${road_1.speedLimit}`);
+  road_1.changeSpeedLimit(45)
+  document.write(`<br>${road_1.speedLimit}`);
+
+  //use Object.assign()
+  const roadBasic = {
+    name: "Mileground",
+    length: 334,
+  }
+
+  const roadPerformance = {
+    AADT: 9983,
+    LOS: "B"
+  }
+
+  const roadInfo = {};
+
+  Object.assign(roadInfo, roadBasic,roadPerformance);
+
+  console.log(roadInfo);
+
+  //use Object.create()
+  const projectProtoType = {
+    startObligate(){
+      console.log(`Project ${this.name} has been oblicated`);
+    },
+
+    constructComplete(){
+      console.log(`Project ${this.name} has constructed`);
+    },
+
+    checkProgress(){
+      console.log(`Project status:${this.progress}`);
+    },
+
+    updateProgress(progress){
+      this.progress = progress;
+      console.log(`Project ${this.name} progress updated: ${this.progress}`);
+    }
+  }
+
+  const project_c = Object.create(projectProtoType);
+  project_c.name = 'Kent Ave Expansion';
+  project_c.progress = 0;
+
+  project_c.startObligate();
+  project_c.constructComplete();
+  project_c.checkProgress();
+  project_c.updateProgress(50)
+  project_c.checkProgress();
+
+  console.log(project_c);
+
+
+
+
+
+
+
+    
+
+  </script>
+</body>
+</html>
